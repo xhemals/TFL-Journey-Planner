@@ -1,0 +1,38 @@
+:root {
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: rgb(123, 134, 140);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	overscroll-behavior: none;
+}
+
+#root {
+	margin: 0;
+	/* display: flex; */
+	place-items: center;
+	min-width: 320px;
+	min-height: 80vh;
+	flex-direction: column;
+	justify-content: center;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	font-family: inherit;
+	cursor: pointer;
+}
+button:hover {
+	border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}

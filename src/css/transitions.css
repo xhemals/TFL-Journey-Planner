@@ -1,0 +1,29 @@
+.fade-enter {
+	/* opacity: 0; */
+	transform: translateY(13.25vh);
+}
+
+.fade-enter-active {
+	opacity: 1;
+	transform: translateY(-0.05vh);
+	transition: opacity 5000ms, transform 5000ms;
+}
+
+.fade-exit {
+	opacity: 1;
+	transform: translateY(13.25vh);
+}
+
+.fade-exit-active {
+	/* opacity: 0; */
+	transform: translateY(-15vh);
+	transition: opacity 5000ms, transform 5000ms;
+}
+
+.transition {
+	/* height: auto; */
+	display: flex;
+	flex-direction: column-reverse;
+	overflow: hidden;
+	height: 16.94vh;
+}

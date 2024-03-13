@@ -1,0 +1,238 @@
+:root {
+	--label-width: 0;
+	--label-height: 0;
+	--label-translationX: 0;
+}
+
+@font-face {
+	font-family: "paddington";
+	src: url("fonts/paddington.ttf");
+}
+
+#root {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 430px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	font-family: paddington;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 5em;
+	// line-height: 1;
+	color: rgb(0, 15, 159);
+	background: rgb(123, 134, 140);
+	z-index: 1;
+	// margin-bottom: 30px;
+}
+
+.to-from-form {
+	display: flex;
+	margin-bottom: 2rem;
+	gap: 1rem;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.label-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	div {
+		flex: 1;
+	}
+	label {
+		font-size: 2.8em;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+	label a {
+		color: white;
+	}
+	label input {
+		display: block;
+		width: 80%;
+		height: 3vh;
+		text-align: center;
+		border-radius: 8px;
+		box-sizing: content-box;
+		text-transform: uppercase;
+		font-size: 0.4em;
+	}
+	label input:focus {
+		outline: none;
+		border: none;
+		outline-offset: 0;
+	}
+	input,
+	input:focus {
+		border: none;
+		outline: none;
+	}
+}
+
+.fullscreen {
+	animation: grow 0.5s ease-in forwards;
+	label input {
+		// height: 10%;
+		// font-size: 0.4em;
+	}
+}
+
+@keyframes grow {
+	0% {
+		// height: var(--label-height);
+	}
+	99% {
+		caret-color: transparent;
+	}
+	100% {
+		// height: 45vh;
+		// font-size: 3em;
+	}
+}
+
+.not-fullscreen {
+	overflow: hidden;
+	animation: push-off 0.5s ease forwards;
+}
+
+@keyframes push-off {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	50% {
+		max-width: 50%;
+	}
+	100% {
+		visibility: hidden;
+		max-width: 0;
+	}
+}
+
+.btn {
+	display: block;
+	background-color: rgb(0, 15, 159);
+	font-size: 1.8em;
+	text-align: center;
+	padding-top: 6px;
+	width: 95%;
+}
+
+.additional-content {
+	font-size: 30px;
+	display: flex;
+	// flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 87.5%;
+	// height: 40vh;
+}
+
+.postcodes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgb(0, 15, 159) !important;
+}
+
+.postcodes.hidden {
+	visibility: hidden;
+	max-width: 0;
+	max-height: 0;
+	animation: hide 0.5s ease-in-out forwards;
+}
+
+@keyframes hide {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.postcodes.show {
+	padding-top: 6px;
+	margin: 0.5%;
+	flex-basis: 49%;
+	max-width: 49%;
+	height: 15%;
+	border-radius: 8px;
+	cursor: pointer;
+	animation: show 0.5s ease-in-out forwards;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.unfocused.not-in-london {
+	background-color: rgb(255, 37, 27);
+}
+
+.unfocused.in-london {
+	background-color: rgb(0, 121, 52);
+}
+
+.btn.hidden {
+	visibility: hidden;
+	max-height: 0;
+}
+
+.close {
+	position: absolute;
+}
+
+.close.hidden {
+	visibility: hidden;
+}
+
+.close.fullscreen {
+	visibility: hidden;
+	transform: translate(120px, -20px);
+	border-radius: 8px;
+	padding: 2px;
+	border: 2px solid transparent;
+	background-color: rgb(0, 15, 159);
+	font-size: 20px;
+	animation: show-close 0.5s ease-in-out both;
+	animation-delay: 0.5s;
+}
+
+@keyframes show-close {
+	0% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+
+.error-message {
+	position: absolute;
+	margin-top: 90px;
+	border-radius: 8px;
+	background-color: rgb(255, 205, 0);
+	color: red;
+	font-size: 0.25em;
+	width: calc(var(--label-width) * 0.8);
+}
