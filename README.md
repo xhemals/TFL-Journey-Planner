@@ -1,4 +1,5 @@
 # TFL Journey Planner
+
 [![React](https://img.shields.io/badge/Code-React-informational?style=flat&logo=react&color=61DAFB)](https://react.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xhemals/TFL-Journey-Planner/deploy.yml)
@@ -16,24 +17,23 @@ To set up a local copy of the project, follow these steps:
 ### Prerequisites
 
 - **Node.js**
-    - Download and install Node.js from the [official website](https://nodejs.org/). This will also install npm.
+  - Download and install Node.js from the [official website](https://nodejs.org/). This will also install npm.
 - **npm**
-    - npm comes bundled with Node.js. Hence, downloading Node.js automatically installs npm on your computer.
+  - npm comes bundled with Node.js. Hence, downloading Node.js automatically installs npm on your computer.
 
-*To verify if Node.js is installed, execute this command in your terminal:* `node -v`
+_To verify if Node.js is installed, execute this command in your terminal:_ `node -v`
 
 ### Installation
 
 1. **Clone the repository** <br>
-    Execute the following command to clone the repository to your local machine: <br>
-    `git clone https://github.com/xhemals/TFL-JourneyPlanner.git`
-    
+   Execute the following command to clone the repository to your local machine: <br>
+   `git clone https://github.com/xhemals/TFL-JourneyPlanner.git`
 2. **Navigate to the project directory** <br>
-    Switch your current working directory to the cloned repository.
+   Switch your current working directory to the cloned repository.
 
 3. **Install the required NPM packages** <br>
-    Execute the following command to install all the necessary NPM packages for the project: <br>
-    `npm install`
+   Execute the following command to install all the necessary NPM packages for the project: <br>
+   `npm install`
 
 ## 🎮 Usage
 
