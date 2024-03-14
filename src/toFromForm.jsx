@@ -1,3 +1,13 @@
+/**
+ * Represents a form component for selecting "From" and "To" locations.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {function} props.setTo - The function to set the "To" location.
+ * @param {function} props.setFrom - The function to set the "From" location.
+ * @param {function} props.setShowDirections - The function to set whether to show directions.
+ * @returns {JSX.Element} The rendered form component.
+ */
 import { useState, useRef, useEffect } from "react";
 import { set, useForm } from "react-hook-form";
 import {

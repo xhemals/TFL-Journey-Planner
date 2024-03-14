@@ -1,3 +1,9 @@
+/**
+ * The main component for the TFL Journey Planner application.
+ *
+ * @returns {JSX.Element} The rendered JSX element.
+ */
+
 import React, { useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./css/transitions.css";

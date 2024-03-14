@@ -1,3 +1,8 @@
+/**
+ * Handles autocomplete functionality for querying postcodes.
+ * @param {string} query - The query string for autocomplete.
+ * @returns {Promise} - A promise that resolves to the autocomplete data.
+ */
 export const HandleAutocomplete = async (query) => {
 	if (query.length === 0) {
 		var data = null;
@@ -10,6 +15,11 @@ export const HandleAutocomplete = async (query) => {
 	return data;
 };
 
+/**
+ * Checks if a given postcode is valid and belongs to the London region.
+ * @param {string} postcode - The postcode to check.
+ * @returns {Promise} - A promise that resolves to a boolean indicating if the postcode is valid and belongs to London.
+ */
 export const PostcodeCheck = async (postcode) => {
 	postcode = postcode.replace(/\s/g, "");
 	if (postcode.length === 0) {
@@ -30,6 +40,12 @@ export const PostcodeCheck = async (postcode) => {
 	}
 };
 
+/**
+ * Shows or hides the postcodes based on the autocomplete results and query.
+ * @param {Array} elements - The array of elements to show or hide.
+ * @param {Object} autoCompleteResults - The autocomplete results object.
+ * @param {string} postcodeQuery - The query string for postcodes.
+ */
 export const ShowPostcodes = (elements, autoCompleteResults, postcodeQuery) => {
 	var x = 0;
 	elements.forEach((element) => {
