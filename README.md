@@ -57,7 +57,7 @@ To build the project for production, execute:
 
 Here are some upcoming features:
 
-- Integration of the TFL route planner API.
+- Style the output from the route planner API properly
 - Addition of a feature to save favorite routes.
 - Capability to share routes with others.
 

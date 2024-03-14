@@ -11,14 +11,19 @@
 
 html {
 	overscroll-behavior: none;
+	height: auto;
+}
+
+body {
+	height: auto;
 }
 
 #root {
 	margin: 0;
 	/* display: flex; */
 	place-items: center;
-	min-width: 320px;
-	min-height: 80vh;
+	/* min-width: 320px;
+	min-height: 80vh; */
 	flex-direction: column;
 	justify-content: center;
 }

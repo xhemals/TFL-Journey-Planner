@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./css/transitions.css";
 import ToFromForm from "./toFromForm";
-import GetDirections from "./directions";
+import ShowDirections from "./directions";
 
 export default function App() {
 	const [to, setTo] = useState("");
@@ -18,10 +18,13 @@ export default function App() {
 	return (
 		<>
 			<h1>TFL Journey Planner</h1>
-			<TransitionGroup className={`${showDirections ? "transition" : ""}`}>
+			<TransitionGroup
+				id="transition-group"
+				className={`${showDirections ? "transition" : ""}`}
+			>
 				<CSSTransition
 					key={showDirections ? "directions" : "form"}
-					timeout={5000}
+					timeout={1000}
 					classNames="fade"
 				>
 					{!showDirections ? (
@@ -31,7 +34,7 @@ export default function App() {
 							setShowDirections={setShowDirections}
 						/>
 					) : (
-						<GetDirections to={to} from={from} />
+						<ShowDirections to={to} from={from} />
 					)}
 				</CSSTransition>
 			</TransitionGroup>

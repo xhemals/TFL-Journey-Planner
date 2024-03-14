@@ -117,7 +117,6 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 
 	const getPostcodes = async (query) => {
 		setResultsReady(false);
-		console.log(autoCompleteResults);
 		if (isFromFocused) {
 			setFromValue(query);
 		} else if (isToFocused) {
@@ -149,7 +148,6 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 		setTimeout(() => {
 			if (inLondon.length === 2) {
 				setShowSubmit(true);
-				// document.getElementById("submit-btn").classList.remove("hidden");
 			} else {
 				setShowSubmit(false);
 			}
@@ -172,13 +170,11 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 		const checkPostcode = async () => {
 			const checker = await PostcodeCheck(fromValue);
 			if (checker === false) {
-				// document.getElementById("from-input").classList.add("not-in-london");
 				setIsFromValid(false);
 			} else if (checker === true) {
-				// document.getElementById("from-input").classList.add("in-london");
 				setIsFromValid(true);
 			}
-			shouldShowSubmit(); // Move shouldShowSubmit function call here
+			shouldShowSubmit();
 		};
 		checkPostcode();
 	}, [fromValue]);
@@ -189,22 +185,19 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 		const checkPostcode = async () => {
 			const checker = await PostcodeCheck(toValue);
 			if (checker === false) {
-				// document.getElementById("to-input").classList.add("not-in-london");
 				setIsToValid(false);
 			} else if (checker === true) {
-				// document.getElementById("to-input").classList.add("in-london");
 				setIsToValid(true);
 			}
-			shouldShowSubmit(); // Move shouldShowSubmit function call here
+			shouldShowSubmit();
 		};
 		checkPostcode();
 	}, [toValue]);
 
 	const onSubmit = (data) => {
-		setFrom(data.from);
-		setTo(data.to);
+		setFrom(data.from.replace(/\s/g, ""));
+		setTo(data.to.replace(/\s/g, ""));
 		setShowDirections(true);
-		console.log(data);
 	};
 
 	return (
@@ -249,12 +242,11 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 								}
 							}}
 							onFocus={() => {
-								isFromFocused
-									? null // Add this line
-									: handleFocus(fromLabelRef);
-							}} // onBlur={() => handleBlur(fromLabelRef)}
+								isFromFocused ? null : handleFocus(fromLabelRef);
+							}}
 							onKeyDown={(event) => handleKeyDown(event, fromLabelRef)}
 							spellCheck="false"
+							autoComplete="off"
 							id="from-input"
 							maxLength={8}
 						/>
@@ -313,13 +305,11 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 								}
 							}}
 							onFocus={() => {
-								isToFocused
-									? null // Add this line
-									: handleFocus(toLabelRef);
+								isToFocused ? null : handleFocus(toLabelRef);
 							}}
-							// onBlur={() => handleBlur(toLabelRef)}
 							onKeyDown={(event) => handleKeyDown(event, toLabelRef)}
 							spellCheck="false"
+							autoComplete="off"
 							id="to-input"
 						/>
 						{isToValid ? null : isToFocused ? null : (
