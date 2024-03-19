@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/xhemals/TFL-Journey-Planner/deploy.yml)
 
-**Live Demo**: [https://xhemals.github.io/TFL-Journey-Planner/](https://xhemals.github.io/TFL-Journey-Planner/)
+**Live Demo**: [https://xhem.al/TFL-Journey-Planner/](https://xhem.al/TFL-Journey-Planner/)
 
 The TFL Journey Planner is a web application that utilises the [Transport for London Unified API](https://api.tfl.gov.uk/) to deliver accurate and efficient route planning. It also incorporates the [Postcodes.io API](https://postcodes.io/) for search autocomplete and validation, thereby enhancing user experience.
 
