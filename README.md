@@ -52,8 +52,8 @@ To build the project for production, execute:
 
 ## 🏆 Credits
 - [SpeedCodeProjects](https://github.com/SpeedCodeProjects) | Train Animation
-  - The train animation was created by [SpeedCodeProjects](https://github.com/SpeedCodeProjects). I made some slight modifications to timing. The original animation can be found [here](https://github.com/SpeedCodeProjects/isometric-train-animation)
-<img src="https://github.com/xhemals/TFL-Journey-Planner/assets/91919183/7da189a3-7378-4c68-a4c4-29379badc499" height="346">
+  - The train animation was created by [SpeedCodeProjects](https://github.com/SpeedCodeProjects). I made some slight modifications to timing. The original animation can be found [here](https://github.com/SpeedCodeProjects/isometric-train-animation) <img src="https://github.com/xhemals/TFL-Journey-Planner/assets/91919183/7da189a3-7378-4c68-a4c4-29379badc499" height="346">
+
 
 ## 🛠️ Built With
 
