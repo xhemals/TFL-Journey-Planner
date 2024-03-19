@@ -2,7 +2,7 @@
 This SVG is from the isometric train animation project 
 available at: https://github.com/SpeedCodeProjects/isometric-train-animation 
 */
-import "./css/trainAnimation.css";
+import "../css/trainAnimation.css";
 const TrainSVG = (props) => (
 	<svg
 		id="Train"

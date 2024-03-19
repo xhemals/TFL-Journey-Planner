@@ -49,6 +49,12 @@ To build the project for production, execute:
 <img src="https://github.com/xhemals/TFL-Journey-Planner/assets/91919183/d26e4a29-be0d-45e9-a362-7ea9de7fee00" width="200">
 <img src="https://github.com/xhemals/TFL-Journey-Planner/assets/91919183/b84f80eb-aae7-42d7-86c8-2fe77dfe5197" width="200">
 
+
+## 🏆 Credits
+- [SpeedCodeProjects](https://github.com/SpeedCodeProjects) | Train Animation
+  - The train animation was created by [SpeedCodeProjects](https://github.com/SpeedCodeProjects). I made some slight modifications to timing. The original animation can be found [here](https://github.com/SpeedCodeProjects/isometric-train-animation)
+<img src="https://github.com/xhemals/TFL-Journey-Planner/assets/91919183/7da189a3-7378-4c68-a4c4-29379badc499" height="346">
+
 ## 🛠️ Built With
 
 <a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="200"></a>

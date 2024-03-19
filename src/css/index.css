@@ -16,16 +16,12 @@ html {
 
 body {
 	height: auto;
+	margin: auto;
 }
 
 #root {
-	margin: 0;
-	/* display: flex; */
+	margin: auto;
 	place-items: center;
-	/* min-width: 320px;
-	min-height: 80vh; */
-	flex-direction: column;
-	justify-content: center;
 }
 
 button {

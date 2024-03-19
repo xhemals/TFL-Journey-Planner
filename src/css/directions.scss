@@ -2,3 +2,52 @@
 	width: 100%;
 	font-size: 4em;
 }
+
+.direction-wrapper {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.5s;
+}
+
+.journey {
+	border-radius: 8px;
+	margin-top: 8px;
+	background-color: rgb(50, 62, 72);
+	display: flex;
+	align-items: center;
+	max-height: 50px;
+	width: 100%;
+	cursor: pointer;
+	svg {
+		margin-left: auto;
+		padding-top: 5px;
+	}
+	p {
+		padding-top: 5px;
+		width: 100%;
+		padding-left: 13.5%;
+		font-size: 1.5em;
+	}
+}
+
+svg {
+	transform: rotateX(0deg);
+	transition: transform 0.5s;
+}
+
+svg.active {
+	transform: rotateX(-180deg);
+	transition: transform 0.5s;
+}
+
+.direction-info {
+	z-index: -1;
+	transform: translateY(-5px);
+	background-color: rgb(87, 98, 106);
+	border-radius: 0 0 8px 8px;
+	overflow: hidden;
+}
+
+.direction-wrapper.active {
+	grid-template-rows: 1fr;
+}
