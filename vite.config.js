@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   root: './',
-  // base: "/TFL-Journey-Planner/"
+  base: "/TFL-Journey-Planner/"
 })
