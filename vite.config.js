@@ -6,5 +6,4 @@ export default defineConfig({
   plugins: [react()],
   root: './',
   base: "/TFL-Journey-Planner/",
-  homepage: "https://xhem.al/TFL-Journey-Planner/"
 })
