@@ -1,7 +1,5 @@
+import React from "react";
 import App from "./App";
 
-export default function Home() {
-  return (
-    <App />
-  );
-}
+// Instead of rendering the App component, export it
+export default App;
