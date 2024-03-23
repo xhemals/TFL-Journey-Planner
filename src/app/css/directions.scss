@@ -51,3 +51,20 @@ svg.active {
 .direction-wrapper.active {
 	grid-template-rows: 1fr;
 }
+
+#share {
+	color: white;
+	margin-top: 10px;
+	background: rgb(0, 15, 159);
+}
+
+.copy {
+	margin-left: auto;
+	width: fit-content;
+	display: grid;
+	grid-auto-flow: row;
+	color: white;
+	.copied {
+		margin-top: 10px;
+	}
+}

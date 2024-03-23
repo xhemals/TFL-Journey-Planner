@@ -2,14 +2,19 @@ import TrainSVG from "./svg/trainAnimation";
 import DropdownSVG from "./svg/dropdownSvg";
 import { GetDirections } from "./getDirections";
 import React, { useState, useEffect } from "react";
+import copy from "copy-to-clipboard";
 import "./css/directions.scss";
 
 export default function DisplayDirections({ to, from }) {
 	const [loading, setLoading] = useState(true);
 	const [directionData, setDirectionData] = useState(null);
+	const [copied, setCopied] = useState(false);
 
-	document.getElementById("transition-group").removeAttribute("class");
-	document.getElementById("transition-group").classList.add("direction-list");
+	const transitionGroup = document.getElementById("transition-group");
+	if (transitionGroup) {
+		transitionGroup.removeAttribute("class");
+		transitionGroup.classList.add("direction-list");
+	}
 
 	function convertMinutesToHours(minutes) {
 		let hours = Math.floor(minutes / 60);
@@ -26,6 +31,21 @@ export default function DisplayDirections({ to, from }) {
 		directions.classList.toggle("hidden");
 		directions.classList.toggle("hidden");
 	};
+
+	const copyURL = () => {
+		const url = `${
+			window.location.origin
+		}/tfl-journey-planner?from=${from.toUpperCase()}&to=${to.toUpperCase()}`;
+		console.log(url);
+		copy(url);
+		setCopied(true);
+	};
+
+	useEffect(() => {
+		setTimeout(() => {
+			setCopied(false);
+		}, 3000);
+	}, [copied]);
 
 	useEffect(() => {
 		setTimeout(async () => {
@@ -44,6 +64,9 @@ export default function DisplayDirections({ to, from }) {
 				</div>
 			) : (
 				<>
+					<h2>
+						{from.toUpperCase()} to {to.toUpperCase()}
+					</h2>
 					{directionData.journeys.map((journeys, index) => (
 						<div
 							key={`journey-${index}`}
@@ -84,6 +107,12 @@ export default function DisplayDirections({ to, from }) {
 							</div>
 						</div>
 					))}
+					<div className="copy">
+						<button id="share" onClick={() => copyURL()}>
+							Share <i className="fa-solid fa-share-from-square"></i>
+						</button>
+						{copied ? <span className="copied">Copied!</span> : null}
+					</div>
 				</>
 			)}
 		</>

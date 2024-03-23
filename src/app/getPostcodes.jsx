@@ -28,14 +28,27 @@ export const PostcodeCheck = async (postcode) => {
 	if (postcode.length > 7 || postcode.length < 6) {
 		return false;
 	} else {
-		const response = await fetch(
-			`https://api.postcodes.io/postcodes/${postcode}`
-		);
-		var data = await response.json();
+		try {
+			const validateResponse = await fetch(
+				`https://api.postcodes.io/postcodes/${postcode}/validate`
+			);
+			const validateData = await validateResponse.json();
+			if (!validateData.result) {
+				return false;
+			}
+			const response = await fetch(
+				`https://api.postcodes.io/postcodes/${postcode}`
+			);
+			if (!response.ok) {
+				return false;
+			} else {
+				var data = await response.json();
+			}
+		} catch (error) {
+			return false;
+		}
 		if (data.result.region === "London") {
 			return true;
-		} else {
-			return false;
 		}
 	}
 };

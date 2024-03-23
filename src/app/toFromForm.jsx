@@ -195,8 +195,8 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 	}, [toValue]);
 
 	const onSubmit = (data) => {
-		setFrom(data.from.replace(/\s/g, ""));
-		setTo(data.to.replace(/\s/g, ""));
+		setFrom(data.from);
+		setTo(data.to);
 		setShowDirections(true);
 	};
 
@@ -223,7 +223,7 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 						close
 					</span>
 					<label ref={fromLabelRef} className="from">
-						<a>From</a>
+						<span>From</span>
 						<input
 							{...register("from")}
 							className={`input ${isFromFocused ? "" : "unfocused"} ${
@@ -338,7 +338,9 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 				</div>
 			</div>
 			<button
-				className={`btn ${showSubmit ? "" : "hidden"}`}
+				className={`btn ${
+					showSubmit && !isFromFocused && !isToFocused ? "" : "hidden"
+				}`}
 				type="submit"
 				id="submit-btn"
 			>
