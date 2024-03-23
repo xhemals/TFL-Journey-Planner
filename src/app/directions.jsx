@@ -36,7 +36,6 @@ export default function DisplayDirections({ to, from }) {
 		const url = `${
 			window.location.origin
 		}/tfl-journey-planner?from=${from.toUpperCase()}&to=${to.toUpperCase()}`;
-		console.log(url);
 		copy(url);
 		setCopied(true);
 	};
