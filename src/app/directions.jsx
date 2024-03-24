@@ -40,7 +40,9 @@ export default function DisplayDirections({ to, from }) {
 	const copyURL = () => {
 		const url = `${
 			window.location.origin
-		}/tfl-journey-planner?from=${from.toUpperCase()}&to=${to.toUpperCase()}`;
+		}/tfl-journey-planner?from=${encodeURIComponent(
+			from.toUpperCase()
+		)}&to=${encodeURIComponent(to.toUpperCase())}`;
 		copy(url);
 		setCopied(true);
 	};
