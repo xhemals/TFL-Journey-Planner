@@ -22,9 +22,13 @@ export default function App() {
 
 	useEffect(() => {
 		if (paramFrom && paramTo) {
-			setFrom(paramFrom);
-			setTo(paramTo);
-			setShowDirections(true);
+			if (paramFrom == paramTo) {
+				setShowDirections(false);
+			} else {
+				setFrom(paramFrom);
+				setTo(paramTo);
+				setShowDirections(true);
+			}
 		}
 	}, [paramFrom, paramTo]);
 

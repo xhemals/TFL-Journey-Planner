@@ -9,19 +9,28 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+	font-family: "paddington";
+	src: url("/tfl-journey-planner/fonts/paddington.ttf");
+}
+
 html {
 	overscroll-behavior: none;
-	height: auto;
+	height: 100%;
 }
 
 body {
-	height: auto;
+	height: 100%;
 	margin: auto;
 }
 
 #root {
-	margin: auto;
+	margin: 0 auto;
 	place-items: center;
+}
+
+#__next {
+	height: 100%;
 }
 
 button {
@@ -29,4 +38,16 @@ button {
 	border: 1px solid transparent;
 	font-family: inherit;
 	cursor: pointer;
+}
+
+footer {
+	font-family: paddington;
+	font-size: 10px;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	overflow-wrap: break-word;
+	p {
+		padding: 0 2rem;
+	}
 }

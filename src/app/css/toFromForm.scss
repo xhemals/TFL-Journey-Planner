@@ -11,8 +11,9 @@
 
 #root {
 	max-width: 430px;
+	min-height: 90%;
 	margin: 0 auto;
-	padding: 2rem;
+	padding: 2rem 2rem 0 2rem;
 	text-align: center;
 	font-family: paddington;
 	overflow: hidden;
@@ -222,7 +223,12 @@ h1 {
 	margin-top: 90px;
 	border-radius: 8px;
 	background-color: rgb(255, 205, 0);
-	color: red;
+	color: rgb(255, 37, 27);
 	font-size: 0.25em;
 	width: calc(var(--label-width) * 0.8);
+}
+
+.same-postcode {
+	color: rgb(255, 205, 0);
+	text-decoration: underline;
 }

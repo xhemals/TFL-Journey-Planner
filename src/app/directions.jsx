@@ -63,6 +63,9 @@ export default function DisplayDirections({ to, from }) {
 				</div>
 			) : (
 				<>
+					<a className="home" href="/tfl-journey-planner" aria-label="Home">
+						<i className="fa-solid fa-house-chimney"></i>
+					</a>
 					<h2>
 						{from.toUpperCase()} to {to.toUpperCase()}
 					</h2>

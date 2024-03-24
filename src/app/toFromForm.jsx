@@ -33,6 +33,7 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 	const [isFromValid, setIsFromValid] = useState(true);
 	const [isToValid, setIsToValid] = useState(true);
 	const [showSubmit, setShowSubmit] = useState(false);
+	const [samePostcode, setSamePostcode] = useState(false);
 
 	useEffect(() => {
 		const fromRect = fromLabelRef.current;
@@ -118,9 +119,9 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 	const getPostcodes = async (query) => {
 		setResultsReady(false);
 		if (isFromFocused) {
-			setFromValue(query);
+			setFromValue(query.toUpperCase());
 		} else if (isToFocused) {
-			setToValue(query);
+			setToValue(query.toUpperCase());
 		}
 		setPostcodeQuery(query);
 		const results = await HandleAutocomplete(query);
@@ -131,12 +132,12 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 	const setValues = (event) => {
 		const postcode = event.target.innerHTML;
 		if (isFromFocused) {
-			setFromValue(postcode);
+			setFromValue(postcode.toUpperCase());
 			setTimeout(() => {
 				handleBlur(fromLabelRef);
 			}, 1);
 		} else if (isToFocused) {
-			setToValue(postcode);
+			setToValue(postcode.toUpperCase());
 			setTimeout(() => {
 				handleBlur(toLabelRef);
 			}, 1);
@@ -147,7 +148,13 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 		var inLondon = document.getElementsByClassName("in-london");
 		setTimeout(() => {
 			if (inLondon.length === 2) {
-				setShowSubmit(true);
+				if (fromValue == toValue) {
+					setSamePostcode(true);
+					setShowSubmit(false);
+				} else {
+					setSamePostcode(false);
+					setShowSubmit(true);
+				}
 			} else {
 				setShowSubmit(false);
 			}
@@ -337,15 +344,14 @@ export default function ToFromForm({ setTo, setFrom, setShowDirections }) {
 					</label>
 				</div>
 			</div>
-			<button
-				className={`btn ${
-					showSubmit && !isFromFocused && !isToFocused ? "" : "hidden"
-				}`}
-				type="submit"
-				id="submit-btn"
-			>
-				Submit
-			</button>
+			{showSubmit && !isFromFocused && !isToFocused ? (
+				<button className="btn" type="submit" id="submit-btn">
+					Submit
+				</button>
+			) : null}
+			{samePostcode && !isFromFocused && !isToFocused ? (
+				<span className="same-postcode">Postcodes cannot be the same</span>
+			) : null}
 		</form>
 	);
 }

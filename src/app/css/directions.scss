@@ -52,7 +52,8 @@ svg.active {
 	grid-template-rows: 1fr;
 }
 
-#share {
+#share,
+#home {
 	color: white;
 	margin-top: 10px;
 	background: rgb(0, 15, 159);
@@ -67,4 +68,10 @@ svg.active {
 	.copied {
 		margin-top: 10px;
 	}
+}
+
+.home {
+	font-size: 25px;
+	margin-right: auto;
+	color: rgb(0, 15, 159);
 }
