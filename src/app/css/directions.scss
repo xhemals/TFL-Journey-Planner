@@ -72,6 +72,8 @@ svg.active {
 
 .home {
 	font-size: 25px;
-	margin-right: auto;
 	color: rgb(0, 15, 159);
+	i {
+		cursor: pointer;
+	}
 }

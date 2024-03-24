@@ -3,6 +3,7 @@ import DropdownSVG from "./svg/dropdownSvg";
 import { GetDirections } from "./getDirections";
 import React, { useState, useEffect } from "react";
 import copy from "copy-to-clipboard";
+import Link from "next/link";
 import "./css/directions.scss";
 
 export default function DisplayDirections({ to, from }) {
@@ -30,6 +31,10 @@ export default function DisplayDirections({ to, from }) {
 		journey.classList.toggle("active");
 		directions.classList.toggle("hidden");
 		directions.classList.toggle("hidden");
+	};
+
+	const refreshPage = () => {
+		window.location.reload();
 	};
 
 	const copyURL = () => {
@@ -63,9 +68,12 @@ export default function DisplayDirections({ to, from }) {
 				</div>
 			) : (
 				<>
-					<a className="home" href="/tfl-journey-planner" aria-label="Home">
-						<i className="fa-solid fa-house-chimney"></i>
-					</a>
+					<div className="home" aria-label="Home">
+						<i
+							className="fa-solid fa-house-chimney"
+							onClick={() => refreshPage()}
+						></i>
+					</div>
 					<h2>
 						{from.toUpperCase()} to {to.toUpperCase()}
 					</h2>

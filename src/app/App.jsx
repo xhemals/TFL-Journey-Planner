@@ -30,6 +30,7 @@ export default function App() {
 				setShowDirections(true);
 			}
 		}
+		window.history.replaceState({}, "", "/tfl-journey-planner");
 	}, [paramFrom, paramTo]);
 
 	return (
