@@ -18,7 +18,7 @@
 		"copy-to-clipboard": "^3.3.3"
 	},
 	"devDependencies": {
-		"eslint": "^8",
+		"eslint": "^9",
 		"eslint-config-next": "14.1.4"
 	}
 }
